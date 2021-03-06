@@ -20,7 +20,7 @@
             float: left;
         }
 
-        
+
         #loadingBar {
             position:absolute;
             top:0px;
@@ -89,17 +89,17 @@
             border-radius:72px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         }
-        
 
-        
+
+
         #config {
             float: left;
             width: 400px;
             height: 600px;
         }
-        
 
-        
+
+
 </style>
 
 </head>
@@ -124,16 +124,16 @@
     // initialize global variables.
     var edges;
     var nodes;
-    var network; 
+    var network;
     var container;
     var options, data;
 
-    
+
     // This method is responsible for drawing the graph, returns the drawn network
     function drawGraph() {
         var container = document.getElementById('mynetwork');
-        
-        
+
+
 
         // parsing and collecting nodes and edges from the python
         nodes = new vis.DataSet([{"font": {"color": "white"}, "id": "corpse_neck_stretch", "label": "corpse_neck_stretch", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_on_heels_prayer_opened_knees", "label": "seated_on_heels_prayer_opened_knees", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_hands_on_mat_flying", "label": "lunge_hands_on_mat_flying", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_dolphin_kneeling", "label": "plank_dolphin_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "dolphin_on_toes", "label": "dolphin_on_toes", "shape": "dot"}, {"font": {"color": "white"}, "id": "handstand_lotus", "label": "handstand_lotus", "shape": "dot"}, {"font": {"color": "white"}, "id": "triangle_bound", "label": "triangle_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "scale", "label": "scale", "shape": "dot"}, {"font": {"color": "white"}, "id": "bow_half", "label": "bow_half", "shape": "dot"}, {"font": {"color": "white"}, "id": "marichi_III", "label": "marichi_III", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_forward", "label": "warrior_I_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "bridge_leg_up", "label": "bridge_leg_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_supported_half_way", "label": "headstand_supported_half_way", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_twist_extended_bound", "label": "lunge_twist_extended_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_hand_to_toe", "label": "standing_hand_to_toe", "shape": "dot"}, {"font": {"color": "white"}, "id": "locust_half", "label": "locust_half", "shape": "dot"}, {"font": {"color": "white"}, "id": "easy_twist", "label": "easy_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "sphinx_neck_stretch", "label": "sphinx_neck_stretch", "shape": "dot"}, {"font": {"color": "white"}, "id": "corpse_front", "label": "corpse_front", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_II_reverse", "label": "warrior_II_reverse", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_hand_to_toe_hands_on_hips", "label": "standing_hand_to_toe_hands_on_hips", "shape": "dot"}, {"font": {"color": "white"}, "id": "toe_stand", "label": "toe_stand", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling_arm_forward", "label": "lunge_kneeling_arm_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "crow_flying", "label": "crow_flying", "shape": "dot"}, {"font": {"color": "white"}, "id": "lift_up", "label": "lift_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling", "label": "lunge_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_leg_up_stack_hips", "label": "downward_dog_leg_up_stack_hips", "shape": "dot"}, {"font": {"color": "white"}, "id": "chair_twist_bind", "label": "chair_twist_bind", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_twist_extended", "label": "lunge_twist_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_hand_to_toe_revolved", "label": "standing_hand_to_toe_revolved", "shape": "dot"}, {"font": {"color": "white"}, "id": "pigeon_full", "label": "pigeon_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "fire_log_forward", "label": "fire_log_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "wheel_leg_up", "label": "wheel_leg_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "wide_legged_forward_bend_twist", "label": "wide_legged_forward_bend_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_eagle", "label": "lunge_crescent_kneeling_eagle", "shape": "dot"}, {"font": {"color": "white"}, "id": "half_moon_bound_hands", "label": "half_moon_bound_hands", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_upward", "label": "plank_upward", "shape": "dot"}, {"font": {"color": "white"}, "id": "triangle", "label": "triangle", "shape": "dot"}, {"font": {"color": "white"}, "id": "lotus_full", "label": "lotus_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_twist_reverse", "label": "lunge_crescent_kneeling_twist_reverse", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_forward_arms_side", "label": "lunge_crescent_forward_arms_side", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_angle", "label": "supine_angle", "shape": "dot"}, {"font": {"color": "white"}, "id": "chair_twist_extended", "label": "chair_twist_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_on_toes", "label": "downward_dog_on_toes", "shape": "dot"}, {"font": {"color": "white"}, "id": "wild_thing", "label": "wild_thing", "shape": "dot"}, {"font": {"color": "white"}, "id": "pyramid_kneeling", "label": "pyramid_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "corpse", "label": "corpse", "shape": "dot"}, {"font": {"color": "white"}, "id": "bound_angle_forward", "label": "bound_angle_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_tripod_spiral_legs", "label": "headstand_tripod_spiral_legs", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_leg_up", "label": "plank_leg_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_on_heels_prayer", "label": "seated_on_heels_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_II_forward", "label": "warrior_II_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_side_extended", "label": "plank_side_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "marichi_I", "label": "marichi_I", "shape": "dot"}, {"font": {"color": "white"}, "id": "cat_balance", "label": "cat_balance", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_forward_bend_preparation", "label": "seated_forward_bend_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_twist", "label": "lunge_crescent_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "box_hand_to_ankle", "label": "box_hand_to_ankle", "shape": "dot"}, {"font": {"color": "white"}, "id": "feathered_peacock", "label": "feathered_peacock", "shape": "dot"}, {"font": {"color": "white"}, "id": "scorpion", "label": "scorpion", "shape": "dot"}, {"font": {"color": "white"}, "id": "child_traditional", "label": "child_traditional", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_twist", "label": "lunge_crescent_kneeling_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "half_moon_bound", "label": "half_moon_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_hand_to_toe_full", "label": "supine_hand_to_toe_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "eight_point", "label": "eight_point", "shape": "dot"}, {"font": {"color": "white"}, "id": "horizon_lunge", "label": "horizon_lunge", "shape": "dot"}, {"font": {"color": "white"}, "id": "shiva_squat_prayer", "label": "shiva_squat_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_eagle", "label": "lunge_crescent_eagle", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling_hands_on_mat", "label": "lunge_kneeling_hands_on_mat", "shape": "dot"}, {"font": {"color": "white"}, "id": "wide_legged_forward_bend_IV", "label": "wide_legged_forward_bend_IV", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_knee_to_elbow", "label": "plank_knee_to_elbow", "shape": "dot"}, {"font": {"color": "white"}, "id": "forward_bend", "label": "forward_bend", "shape": "dot"}, {"font": {"color": "white"}, "id": "pigeon_half", "label": "pigeon_half", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_head_to_knee_preparation", "label": "standing_head_to_knee_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "tortoise", "label": "tortoise", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_forward_bend", "label": "lunge_crescent_kneeling_forward_bend", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_forward_bend", "label": "lunge_crescent_forward_bend", "shape": "dot"}, {"font": {"color": "white"}, "id": "mountain_backbend", "label": "mountain_backbend", "shape": "dot"}, {"font": {"color": "white"}, "id": "table_leg_up", "label": "table_leg_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "dolphin", "label": "dolphin", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_hands_on_mat_back", "label": "lunge_hands_on_mat_back", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_knee_to_chest", "label": "standing_knee_to_chest", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_hand_to_toe", "label": "supine_hand_to_toe", "shape": "dot"}, {"font": {"color": "white"}, "id": "side_lunge_extended_bound", "label": "side_lunge_extended_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_leg_up", "label": "downward_dog_leg_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "firefly", "label": "firefly", "shape": "dot"}, {"font": {"color": "white"}, "id": "child_wide_side_lean", "label": "child_wide_side_lean", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_twist", "label": "warrior_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_knee_to_opposite_elbow", "label": "plank_knee_to_opposite_elbow", "shape": "dot"}, {"font": {"color": "white"}, "id": "crow_side_extended", "label": "crow_side_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "flamingo_humble", "label": "flamingo_humble", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent", "label": "lunge_crescent", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_side_tree", "label": "plank_side_tree", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_tortoise", "label": "supine_tortoise", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_forward_bend_half_lotus", "label": "seated_forward_bend_half_lotus", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling_twist", "label": "lunge_kneeling_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "fish_lotus", "label": "fish_lotus", "shape": "dot"}, {"font": {"color": "white"}, "id": "tortoise_bind", "label": "tortoise_bind", "shape": "dot"}, {"font": {"color": "white"}, "id": "camel_preparation", "label": "camel_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "four_limbed_staff", "label": "four_limbed_staff", "shape": "dot"}, {"font": {"color": "white"}, "id": "flying_lizard", "label": "flying_lizard", "shape": "dot"}, {"font": {"color": "white"}, "id": "cat", "label": "cat", "shape": "dot"}, {"font": {"color": "white"}, "id": "toe_squat", "label": "toe_squat", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_knee_to_forehead", "label": "downward_dog_knee_to_forehead", "shape": "dot"}, {"font": {"color": "white"}, "id": "side_angle_extended", "label": "side_angle_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "gate_reverse", "label": "gate_reverse", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_II_forward_arm_forward", "label": "warrior_II_forward_arm_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "half_moon_revolved", "label": "half_moon_revolved", "shape": "dot"}, {"font": {"color": "white"}, "id": "wide_legged_forward_bend_III", "label": "wide_legged_forward_bend_III", "shape": "dot"}, {"font": {"color": "white"}, "id": "splits_standing_bound", "label": "splits_standing_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "splits_wide", "label": "splits_wide", "shape": "dot"}, {"font": {"color": "white"}, "id": "hero", "label": "hero", "shape": "dot"}, {"font": {"color": "white"}, "id": "mountain", "label": "mountain", "shape": "dot"}, {"font": {"color": "white"}, "id": "half_moon_revolved_bound", "label": "half_moon_revolved_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "heron", "label": "heron", "shape": "dot"}, {"font": {"color": "white"}, "id": "star", "label": "star", "shape": "dot"}, {"font": {"color": "white"}, "id": "lord_of_the_dance_full", "label": "lord_of_the_dance_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "pigeon_flying", "label": "pigeon_flying", "shape": "dot"}, {"font": {"color": "white"}, "id": "handstand", "label": "handstand", "shape": "dot"}, {"font": {"color": "white"}, "id": "bridge_preparation", "label": "bridge_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "locust_full", "label": "locust_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_cactus_arms", "label": "lunge_crescent_kneeling_cactus_arms", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_bent_knees", "label": "downward_dog_bent_knees", "shape": "dot"}, {"font": {"color": "white"}, "id": "boat_low", "label": "boat_low", "shape": "dot"}, {"font": {"color": "white"}, "id": "child_wide", "label": "child_wide", "shape": "dot"}, {"font": {"color": "white"}, "id": "lotus_bound", "label": "lotus_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "mountain_arms_up", "label": "mountain_arms_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "mountain_arms_side", "label": "mountain_arms_side", "shape": "dot"}, {"font": {"color": "white"}, "id": "cat_balance_elbow_to_knee", "label": "cat_balance_elbow_to_knee", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_supported_preparation_hips_over_head", "label": "headstand_supported_preparation_hips_over_head", "shape": "dot"}, {"font": {"color": "white"}, "id": "visvamitra_kneeling", "label": "visvamitra_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "wide_legged_forward_bend_II", "label": "wide_legged_forward_bend_II", "shape": "dot"}, {"font": {"color": "white"}, "id": "shoulderstand_lotus", "label": "shoulderstand_lotus", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_head_to_knee", "label": "standing_head_to_knee", "shape": "dot"}, {"font": {"color": "white"}, "id": "bow_preparation", "label": "bow_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "pigeon_king", "label": "pigeon_king", "shape": "dot"}, {"font": {"color": "white"}, "id": "lizard_kneeling", "label": "lizard_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_leg_up_kneeling", "label": "downward_dog_leg_up_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "knee_pile_bind", "label": "knee_pile_bind", "shape": "dot"}, {"font": {"color": "white"}, "id": "boat_half", "label": "boat_half", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_kneeling", "label": "plank_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "handstand_splits", "label": "handstand_splits", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank", "label": "plank", "shape": "dot"}, {"font": {"color": "white"}, "id": "locust", "label": "locust", "shape": "dot"}, {"font": {"color": "white"}, "id": "crooked_monkey_forearm", "label": "crooked_monkey_forearm", "shape": "dot"}, {"font": {"color": "white"}, "id": "eagle_forward", "label": "eagle_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "handstand_scorpion", "label": "handstand_scorpion", "shape": "dot"}, {"font": {"color": "white"}, "id": "dolphin_leg_up", "label": "dolphin_leg_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling_arm_up", "label": "lunge_kneeling_arm_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_eagle_forward", "label": "warrior_I_eagle_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "embryo", "label": "embryo", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_cow", "label": "seated_cow", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_III_airplane", "label": "warrior_III_airplane", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_on_heels_prayer_twist", "label": "seated_on_heels_prayer_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_kneeling_side", "label": "plank_kneeling_side", "shape": "dot"}, {"font": {"color": "white"}, "id": "knee_pile_forward", "label": "knee_pile_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "wind_removing_half", "label": "wind_removing_half", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog", "label": "downward_dog", "shape": "dot"}, {"font": {"color": "white"}, "id": "puppy_extended", "label": "puppy_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "pigeon", "label": "pigeon", "shape": "dot"}, {"font": {"color": "white"}, "id": "hero_reclining", "label": "hero_reclining", "shape": "dot"}, {"font": {"color": "white"}, "id": "head_to_knee", "label": "head_to_knee", "shape": "dot"}, {"font": {"color": "white"}, "id": "awkward", "label": "awkward", "shape": "dot"}, {"font": {"color": "white"}, "id": "camel_preparation_hands_on_hips", "label": "camel_preparation_hands_on_hips", "shape": "dot"}, {"font": {"color": "white"}, "id": "lizard", "label": "lizard", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_humble", "label": "warrior_humble", "shape": "dot"}, {"font": {"color": "white"}, "id": "deaf_man", "label": "deaf_man", "shape": "dot"}, {"font": {"color": "white"}, "id": "crane", "label": "crane", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_on_heels_hands_on_mat_opened_knees", "label": "seated_on_heels_hands_on_mat_opened_knees", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_eagle", "label": "warrior_I_eagle", "shape": "dot"}, {"font": {"color": "white"}, "id": "figure_four_twist", "label": "figure_four_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "chin_stand", "label": "chin_stand", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_half_lotus", "label": "standing_half_lotus", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_pigeon", "label": "supine_pigeon", "shape": "dot"}, {"font": {"color": "white"}, "id": "side_lunge_extended", "label": "side_lunge_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_hands_on_hips_forward", "label": "warrior_I_hands_on_hips_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "splits_standing", "label": "splits_standing", "shape": "dot"}, {"font": {"color": "white"}, "id": "marichi_III_traditional", "label": "marichi_III_traditional", "shape": "dot"}, {"font": {"color": "white"}, "id": "box_neutral", "label": "box_neutral", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_half_lotus_bound", "label": "standing_half_lotus_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_supported", "label": "headstand_supported", "shape": "dot"}, {"font": {"color": "white"}, "id": "knee_pile_bind_forward", "label": "knee_pile_bind_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "corpse_double_leg_raise", "label": "corpse_double_leg_raise", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_eagle_forward", "label": "lunge_crescent_kneeling_eagle_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_kneeling", "label": "warrior_I_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "fish", "label": "fish", "shape": "dot"}, {"font": {"color": "white"}, "id": "turtle_head_tucked", "label": "turtle_head_tucked", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_twist_extended_bound", "label": "warrior_twist_extended_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "cobra", "label": "cobra", "shape": "dot"}, {"font": {"color": "white"}, "id": "crow", "label": "crow", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_eagle_backbend", "label": "lunge_crescent_eagle_backbend", "shape": "dot"}, {"font": {"color": "white"}, "id": "mountain_side_twist", "label": "mountain_side_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_tripod", "label": "headstand_tripod", "shape": "dot"}, {"font": {"color": "white"}, "id": "visvamitra", "label": "visvamitra", "shape": "dot"}, {"font": {"color": "white"}, "id": "staff_inverted", "label": "staff_inverted", "shape": "dot"}, {"font": {"color": "white"}, "id": "pigeon_forward_bend", "label": "pigeon_forward_bend", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_twist_reverse", "label": "lunge_crescent_twist_reverse", "shape": "dot"}, {"font": {"color": "white"}, "id": "lord_of_the_dance_revolved", "label": "lord_of_the_dance_revolved", "shape": "dot"}, {"font": {"color": "white"}, "id": "frog", "label": "frog", "shape": "dot"}, {"font": {"color": "white"}, "id": "pyramid_arms_up_preparation", "label": "pyramid_arms_up_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_bind", "label": "lunge_bind", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_eagle_backbend", "label": "lunge_crescent_kneeling_eagle_backbend", "shape": "dot"}, {"font": {"color": "white"}, "id": "lord_of_the_fishes_half", "label": "lord_of_the_fishes_half", "shape": "dot"}, {"font": {"color": "white"}, "id": "upward_dog", "label": "upward_dog", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_prayer", "label": "warrior_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "boat_bind", "label": "boat_bind", "shape": "dot"}, {"font": {"color": "white"}, "id": "wide_legged_forward_bend_half_way", "label": "wide_legged_forward_bend_half_way", "shape": "dot"}, {"font": {"color": "white"}, "id": "chair", "label": "chair", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_cactus_arms", "label": "warrior_I_cactus_arms", "shape": "dot"}, {"font": {"color": "white"}, "id": "fire_log", "label": "fire_log", "shape": "dot"}, {"font": {"color": "white"}, "id": "bridge", "label": "bridge", "shape": "dot"}, {"font": {"color": "white"}, "id": "pyramid_preparation", "label": "pyramid_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "triangle_forward", "label": "triangle_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_knee_to_forehead_kneeling", "label": "downward_dog_knee_to_forehead_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_eagle_backbend", "label": "warrior_I_eagle_backbend", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_III_prayer", "label": "warrior_III_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_prayer", "label": "lunge_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "wide_legged_forward_bend_I", "label": "wide_legged_forward_bend_I", "shape": "dot"}, {"font": {"color": "white"}, "id": "bird_of_paradise_revolved_preparation", "label": "bird_of_paradise_revolved_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "splits_front", "label": "splits_front", "shape": "dot"}, {"font": {"color": "white"}, "id": "dog", "label": "dog", "shape": "dot"}, {"font": {"color": "white"}, "id": "forward_bend_twist", "label": "forward_bend_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "triangle_reverse", "label": "triangle_reverse", "shape": "dot"}, {"font": {"color": "white"}, "id": "shiva_squat", "label": "shiva_squat", "shape": "dot"}, {"font": {"color": "white"}, "id": "thunderbolt", "label": "thunderbolt", "shape": "dot"}, {"font": {"color": "white"}, "id": "boat_bind_outside_edge", "label": "boat_bind_outside_edge", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_side_half_lotus", "label": "plank_side_half_lotus", "shape": "dot"}, {"font": {"color": "white"}, "id": "crow_side", "label": "crow_side", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_marichi", "label": "standing_marichi", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_hand_to_ankle", "label": "downward_dog_hand_to_ankle", "shape": "dot"}, {"font": {"color": "white"}, "id": "cobra_king", "label": "cobra_king", "shape": "dot"}, {"font": {"color": "white"}, "id": "staff_inverted_leg_up", "label": "staff_inverted_leg_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "chin_stand_single_leg", "label": "chin_stand_single_leg", "shape": "dot"}, {"font": {"color": "white"}, "id": "gorilla", "label": "gorilla", "shape": "dot"}, {"font": {"color": "white"}, "id": "plow", "label": "plow", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge", "label": "lunge", "shape": "dot"}, {"font": {"color": "white"}, "id": "gate", "label": "gate", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I", "label": "warrior_I", "shape": "dot"}, {"font": {"color": "white"}, "id": "half_moon", "label": "half_moon", "shape": "dot"}, {"font": {"color": "white"}, "id": "pyramid", "label": "pyramid", "shape": "dot"}, {"font": {"color": "white"}, "id": "hero_reclining_extended", "label": "hero_reclining_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "staff", "label": "staff", "shape": "dot"}, {"font": {"color": "white"}, "id": "lotus_bound_forward", "label": "lotus_bound_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_hand_to_toe_full", "label": "standing_hand_to_toe_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_hands_on_mat", "label": "lunge_hands_on_mat", "shape": "dot"}, {"font": {"color": "white"}, "id": "boat_full", "label": "boat_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_forward_bend", "label": "seated_forward_bend", "shape": "dot"}, {"font": {"color": "white"}, "id": "caterpillar", "label": "caterpillar", "shape": "dot"}, {"font": {"color": "white"}, "id": "table_knee_to_forehead", "label": "table_knee_to_forehead", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_leg_up_kneeling", "label": "plank_leg_up_kneeling", "shape": "dot"}, {"font": {"color": "white"}, "id": "corpse_extended", "label": "corpse_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_hands_on_hips_forward_bend", "label": "lunge_crescent_kneeling_hands_on_hips_forward_bend", "shape": "dot"}, {"font": {"color": "white"}, "id": "chair_side_twist", "label": "chair_side_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "crow_side_preparation", "label": "crow_side_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "downward_dog_hamstring", "label": "downward_dog_hamstring", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_hand_to_toe_extended", "label": "standing_hand_to_toe_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "mountain_cactus_arms", "label": "mountain_cactus_arms", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_bound_angle", "label": "supine_bound_angle", "shape": "dot"}, {"font": {"color": "white"}, "id": "side_lunge", "label": "side_lunge", "shape": "dot"}, {"font": {"color": "white"}, "id": "chin_stand_scorpion", "label": "chin_stand_scorpion", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_tortoise_bind", "label": "supine_tortoise_bind", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_tripod_knees_on_elbows", "label": "headstand_tripod_knees_on_elbows", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_side_star", "label": "plank_side_star", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_on_heels_twist_bound", "label": "seated_on_heels_twist_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "splits_standing_bent_knee", "label": "splits_standing_bent_knee", "shape": "dot"}, {"font": {"color": "white"}, "id": "goddess", "label": "goddess", "shape": "dot"}, {"font": {"color": "white"}, "id": "crooked_monkey", "label": "crooked_monkey", "shape": "dot"}, {"font": {"color": "white"}, "id": "bird_of_paradise_revolved", "label": "bird_of_paradise_revolved", "shape": "dot"}, {"font": {"color": "white"}, "id": "flying_man_revolved", "label": "flying_man_revolved", "shape": "dot"}, {"font": {"color": "white"}, "id": "lotus_half", "label": "lotus_half", "shape": "dot"}, {"font": {"color": "white"}, "id": "garland", "label": "garland", "shape": "dot"}, {"font": {"color": "white"}, "id": "tree", "label": "tree", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_forward_bend_wide_angle_II", "label": "seated_forward_bend_wide_angle_II", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_III", "label": "warrior_III", "shape": "dot"}, {"font": {"color": "white"}, "id": "bound_angle", "label": "bound_angle", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_supported_eagle", "label": "headstand_supported_eagle", "shape": "dot"}, {"font": {"color": "white"}, "id": "little_thunderbolt", "label": "little_thunderbolt", "shape": "dot"}, {"font": {"color": "white"}, "id": "wheel_head_down", "label": "wheel_head_down", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_III_eagle", "label": "warrior_III_eagle", "shape": "dot"}, {"font": {"color": "white"}, "id": "lord_of_the_dance", "label": "lord_of_the_dance", "shape": "dot"}, {"font": {"color": "white"}, "id": "gate_preparation", "label": "gate_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_cactus_arms", "label": "lunge_crescent_cactus_arms", "shape": "dot"}, {"font": {"color": "white"}, "id": "shoulderstand_supported", "label": "shoulderstand_supported", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_dolphin_side", "label": "plank_dolphin_side", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_dolphin", "label": "plank_dolphin", "shape": "dot"}, {"font": {"color": "white"}, "id": "mountain_salute", "label": "mountain_salute", "shape": "dot"}, {"font": {"color": "white"}, "id": "half_moon_revolved_bow", "label": "half_moon_revolved_bow", "shape": "dot"}, {"font": {"color": "white"}, "id": "upward_dog_neck_stretch", "label": "upward_dog_neck_stretch", "shape": "dot"}, {"font": {"color": "white"}, "id": "table", "label": "table", "shape": "dot"}, {"font": {"color": "white"}, "id": "chair_twist", "label": "chair_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "blissful_baby", "label": "blissful_baby", "shape": "dot"}, {"font": {"color": "white"}, "id": "wild_thing_forearm", "label": "wild_thing_forearm", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_arm_forward", "label": "lunge_arm_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_cat", "label": "seated_cat", "shape": "dot"}, {"font": {"color": "white"}, "id": "figure_four", "label": "figure_four", "shape": "dot"}, {"font": {"color": "white"}, "id": "forward_bend_half_way", "label": "forward_bend_half_way", "shape": "dot"}, {"font": {"color": "white"}, "id": "camel_easy", "label": "camel_easy", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_hand_to_toe_extended", "label": "supine_hand_to_toe_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "child", "label": "child", "shape": "dot"}, {"font": {"color": "white"}, "id": "lotus_elevated", "label": "lotus_elevated", "shape": "dot"}, {"font": {"color": "white"}, "id": "bow_side", "label": "bow_side", "shape": "dot"}, {"font": {"color": "white"}, "id": "supine_spinal_twist", "label": "supine_spinal_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_hands_on_hips_forward_bend", "label": "lunge_crescent_hands_on_hips_forward_bend", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_forward_bend_wide_angle", "label": "seated_forward_bend_wide_angle", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_I_hands_on_hips", "label": "warrior_I_hands_on_hips", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_twist", "label": "lunge_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "fish_preparation", "label": "fish_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "scale_forward", "label": "scale_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_II", "label": "warrior_II", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling_prayer", "label": "lunge_kneeling_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "forward_bend_big_toe", "label": "forward_bend_big_toe", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_eagle_forward", "label": "lunge_crescent_eagle_forward", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_side", "label": "plank_side", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling_twist_extended", "label": "lunge_kneeling_twist_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "plank_dolphin_knee_to_elbow", "label": "plank_dolphin_knee_to_elbow", "shape": "dot"}, {"font": {"color": "white"}, "id": "seated_forward_bend_three_limbs", "label": "seated_forward_bend_three_limbs", "shape": "dot"}, {"font": {"color": "white"}, "id": "forward_bend_deep", "label": "forward_bend_deep", "shape": "dot"}, {"font": {"color": "white"}, "id": "turtle", "label": "turtle", "shape": "dot"}, {"font": {"color": "white"}, "id": "crescent_moon", "label": "crescent_moon", "shape": "dot"}, {"font": {"color": "white"}, "id": "sphinx", "label": "sphinx", "shape": "dot"}, {"font": {"color": "white"}, "id": "eagle", "label": "eagle", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_twist_extended", "label": "warrior_twist_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "warrior_humble_preparation", "label": "warrior_humble_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "wheel_preparation", "label": "wheel_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "knee_pile", "label": "knee_pile", "shape": "dot"}, {"font": {"color": "white"}, "id": "grasshopper", "label": "grasshopper", "shape": "dot"}, {"font": {"color": "white"}, "id": "fallen_triangle", "label": "fallen_triangle", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_tripod_preparation", "label": "headstand_tripod_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_arm_up", "label": "lunge_arm_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "rag_doll", "label": "rag_doll", "shape": "dot"}, {"font": {"color": "white"}, "id": "tree_toppling", "label": "tree_toppling", "shape": "dot"}, {"font": {"color": "white"}, "id": "banana", "label": "banana", "shape": "dot"}, {"font": {"color": "white"}, "id": "camel", "label": "camel", "shape": "dot"}, {"font": {"color": "white"}, "id": "chair_twist_bind_up", "label": "chair_twist_bind_up", "shape": "dot"}, {"font": {"color": "white"}, "id": "pyramid_prayer", "label": "pyramid_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "bound_angle_II", "label": "bound_angle_II", "shape": "dot"}, {"font": {"color": "white"}, "id": "bow", "label": "bow", "shape": "dot"}, {"font": {"color": "white"}, "id": "eight_angle", "label": "eight_angle", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_hands_on_hips", "label": "lunge_crescent_hands_on_hips", "shape": "dot"}, {"font": {"color": "white"}, "id": "wheel", "label": "wheel", "shape": "dot"}, {"font": {"color": "white"}, "id": "cobra_full", "label": "cobra_full", "shape": "dot"}, {"font": {"color": "white"}, "id": "standing_forward_bend_half_lotus", "label": "standing_forward_bend_half_lotus", "shape": "dot"}, {"font": {"color": "white"}, "id": "box_twist", "label": "box_twist", "shape": "dot"}, {"font": {"color": "white"}, "id": "star_hands_interlaced", "label": "star_hands_interlaced", "shape": "dot"}, {"font": {"color": "white"}, "id": "rabbit", "label": "rabbit", "shape": "dot"}, {"font": {"color": "white"}, "id": "star_hands_on_hips", "label": "star_hands_on_hips", "shape": "dot"}, {"font": {"color": "white"}, "id": "triangle_revolved", "label": "triangle_revolved", "shape": "dot"}, {"font": {"color": "white"}, "id": "figure_four_twist_extended", "label": "figure_four_twist_extended", "shape": "dot"}, {"font": {"color": "white"}, "id": "headstand_supported_preparation", "label": "headstand_supported_preparation", "shape": "dot"}, {"font": {"color": "white"}, "id": "easy", "label": "easy", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_crescent_kneeling_hands_on_hips", "label": "lunge_crescent_kneeling_hands_on_hips", "shape": "dot"}, {"font": {"color": "white"}, "id": "chair_prayer", "label": "chair_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "lunge_kneeling_twist_extended_bound", "label": "lunge_kneeling_twist_extended_bound", "shape": "dot"}, {"font": {"color": "white"}, "id": "tree_prayer", "label": "tree_prayer", "shape": "dot"}, {"font": {"color": "white"}, "id": "shoulderstand_unsupported", "label": "shoulderstand_unsupported", "shape": "dot"}]);
@@ -174,21 +174,21 @@
         }
     }
 };
-        
-        
 
-        
+
+
+
         // if this network requires displaying the configure window,
         // put it in its div
         options.configure["container"] = document.getElementById("config");
-        
+
 
         network = new vis.Network(container, data, options);
-	 
-        
 
 
-        
+
+
+
         network.on("stabilizationProgress", function(params) {
       		document.getElementById('loadingBar').removeAttribute("style");
 	        var maxWidth = 496;
@@ -206,7 +206,7 @@
 	        // really clean the dom element
 	        setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
 	    });
-        
+
 
         return network;
 
@@ -215,5 +215,360 @@
     drawGraph();
 
 </script>
+<a href="https://pocketyoga.com/pose/mountain">mountain</a>
+<a href="https://pocketyoga.com/pose/warrior_I">warrior_I</a>
+<a href="https://pocketyoga.com/pose/downward_dog_hamstring">downward_dog_hamstring</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_twist">lunge_crescent_kneeling_twist</a>
+<a href="https://pocketyoga.com/pose/handstand">handstand</a>
+<a href="https://pocketyoga.com/pose/wide_legged_forward_bend_II">wide_legged_forward_bend_II</a>
+<a href="https://pocketyoga.com/pose/sphinx_neck_stretch">sphinx_neck_stretch</a>
+<a href="https://pocketyoga.com/pose/standing_half_lotus">standing_half_lotus</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling_twist_extended">lunge_kneeling_twist_extended</a>
+<a href="https://pocketyoga.com/pose/downward_dog_knee_to_forehead">downward_dog_knee_to_forehead</a>
+<a href="https://pocketyoga.com/pose/child_wide">child_wide</a>
+<a href="https://pocketyoga.com/pose/plank_side_extended">plank_side_extended</a>
+<a href="https://pocketyoga.com/pose/horizon_lunge">horizon_lunge</a>
+<a href="https://pocketyoga.com/pose/headstand_supported_preparation_hips_over_head">headstand_supported_preparation_hips_over_head</a>
+<a href="https://pocketyoga.com/pose/fish">fish</a>
+<a href="https://pocketyoga.com/pose/wide_legged_forward_bend_III">wide_legged_forward_bend_III</a>
+<a href="https://pocketyoga.com/pose/awkward">awkward</a>
+<a href="https://pocketyoga.com/pose/table_knee_to_forehead">table_knee_to_forehead</a>
+<a href="https://pocketyoga.com/pose/cobra">cobra</a>
+<a href="https://pocketyoga.com/pose/plank_side_half_lotus">plank_side_half_lotus</a>
+<a href="https://pocketyoga.com/pose/rag_doll">rag_doll</a>
+<a href="https://pocketyoga.com/pose/splits_front">splits_front</a>
+<a href="https://pocketyoga.com/pose/forward_bend_big_toe">forward_bend_big_toe</a>
+<a href="https://pocketyoga.com/pose/crescent_moon">crescent_moon</a>
+<a href="https://pocketyoga.com/pose/seated_forward_bend_half_lotus">seated_forward_bend_half_lotus</a>
+<a href="https://pocketyoga.com/pose/bird_of_paradise_revolved">bird_of_paradise_revolved</a>
+<a href="https://pocketyoga.com/pose/caterpillar">caterpillar</a>
+<a href="https://pocketyoga.com/pose/lunge_twist_extended">lunge_twist_extended</a>
+<a href="https://pocketyoga.com/pose/standing_head_to_knee_preparation">standing_head_to_knee_preparation</a>
+<a href="https://pocketyoga.com/pose/seated_on_heels_twist_bound">seated_on_heels_twist_bound</a>
+<a href="https://pocketyoga.com/pose/chin_stand_single_leg">chin_stand_single_leg</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_eagle_forward">lunge_crescent_kneeling_eagle_forward</a>
+<a href="https://pocketyoga.com/pose/knee_pile_bind_forward">knee_pile_bind_forward</a>
+<a href="https://pocketyoga.com/pose/downward_dog_bent_knees">downward_dog_bent_knees</a>
+<a href="https://pocketyoga.com/pose/crow_side_preparation">crow_side_preparation</a>
+<a href="https://pocketyoga.com/pose/plank_knee_to_opposite_elbow">plank_knee_to_opposite_elbow</a>
+<a href="https://pocketyoga.com/pose/flying_man_revolved">flying_man_revolved</a>
+<a href="https://pocketyoga.com/pose/warrior_III_eagle">warrior_III_eagle</a>
+<a href="https://pocketyoga.com/pose/cobra_full">cobra_full</a>
+<a href="https://pocketyoga.com/pose/tortoise_bind">tortoise_bind</a>
+<a href="https://pocketyoga.com/pose/marichi_I">marichi_I</a>
+<a href="https://pocketyoga.com/pose/side_angle_extended">side_angle_extended</a>
+<a href="https://pocketyoga.com/pose/thunderbolt">thunderbolt</a>
+<a href="https://pocketyoga.com/pose/fish_lotus">fish_lotus</a>
+<a href="https://pocketyoga.com/pose/warrior_I_hands_on_hips_forward">warrior_I_hands_on_hips_forward</a>
+<a href="https://pocketyoga.com/pose/supine_hand_to_toe_extended">supine_hand_to_toe_extended</a>
+<a href="https://pocketyoga.com/pose/boat_bind">boat_bind</a>
+<a href="https://pocketyoga.com/pose/mountain_cactus_arms">mountain_cactus_arms</a>
+<a href="https://pocketyoga.com/pose/lizard_kneeling">lizard_kneeling</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_eagle_backbend">lunge_crescent_kneeling_eagle_backbend</a>
+<a href="https://pocketyoga.com/pose/standing_hand_to_toe_hands_on_hips">standing_hand_to_toe_hands_on_hips</a>
+<a href="https://pocketyoga.com/pose/warrior_I_eagle">warrior_I_eagle</a>
+<a href="https://pocketyoga.com/pose/eagle_forward">eagle_forward</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent">lunge_crescent</a>
+<a href="https://pocketyoga.com/pose/triangle_bound">triangle_bound</a>
+<a href="https://pocketyoga.com/pose/dog">dog</a>
+<a href="https://pocketyoga.com/pose/rabbit">rabbit</a>
+<a href="https://pocketyoga.com/pose/mountain_backbend">mountain_backbend</a>
+<a href="https://pocketyoga.com/pose/triangle_reverse">triangle_reverse</a>
+<a href="https://pocketyoga.com/pose/chair_twist_bind_up">chair_twist_bind_up</a>
+<a href="https://pocketyoga.com/pose/turtle_head_tucked">turtle_head_tucked</a>
+<a href="https://pocketyoga.com/pose/lord_of_the_dance_full">lord_of_the_dance_full</a>
+<a href="https://pocketyoga.com/pose/half_moon">half_moon</a>
+<a href="https://pocketyoga.com/pose/seated_on_heels_prayer_opened_knees">seated_on_heels_prayer_opened_knees</a>
+<a href="https://pocketyoga.com/pose/forward_bend_twist">forward_bend_twist</a>
+<a href="https://pocketyoga.com/pose/pigeon_flying">pigeon_flying</a>
+<a href="https://pocketyoga.com/pose/warrior_II">warrior_II</a>
+<a href="https://pocketyoga.com/pose/downward_dog_leg_up_stack_hips">downward_dog_leg_up_stack_hips</a>
+<a href="https://pocketyoga.com/pose/lord_of_the_fishes_half">lord_of_the_fishes_half</a>
+<a href="https://pocketyoga.com/pose/supine_hand_to_toe">supine_hand_to_toe</a>
+<a href="https://pocketyoga.com/pose/pigeon_forward_bend">pigeon_forward_bend</a>
+<a href="https://pocketyoga.com/pose/warrior_III_airplane">warrior_III_airplane</a>
+<a href="https://pocketyoga.com/pose/plank_kneeling">plank_kneeling</a>
+<a href="https://pocketyoga.com/pose/half_moon_bound_hands">half_moon_bound_hands</a>
+<a href="https://pocketyoga.com/pose/plank_dolphin_kneeling">plank_dolphin_kneeling</a>
+<a href="https://pocketyoga.com/pose/mountain_side_twist">mountain_side_twist</a>
+<a href="https://pocketyoga.com/pose/gate_preparation">gate_preparation</a>
+<a href="https://pocketyoga.com/pose/headstand_supported">headstand_supported</a>
+<a href="https://pocketyoga.com/pose/pigeon_king">pigeon_king</a>
+<a href="https://pocketyoga.com/pose/standing_hand_to_toe_extended">standing_hand_to_toe_extended</a>
+<a href="https://pocketyoga.com/pose/marichi_III">marichi_III</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_forward_bend">lunge_crescent_kneeling_forward_bend</a>
+<a href="https://pocketyoga.com/pose/knee_pile_forward">knee_pile_forward</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling_arm_forward">lunge_kneeling_arm_forward</a>
+<a href="https://pocketyoga.com/pose/chin_stand_scorpion">chin_stand_scorpion</a>
+<a href="https://pocketyoga.com/pose/pigeon_half">pigeon_half</a>
+<a href="https://pocketyoga.com/pose/downward_dog_leg_up">downward_dog_leg_up</a>
+<a href="https://pocketyoga.com/pose/shiva_squat_prayer">shiva_squat_prayer</a>
+<a href="https://pocketyoga.com/pose/warrior_I_hands_on_hips">warrior_I_hands_on_hips</a>
+<a href="https://pocketyoga.com/pose/blissful_baby">blissful_baby</a>
+<a href="https://pocketyoga.com/pose/chair">chair</a>
+<a href="https://pocketyoga.com/pose/plank">plank</a>
+<a href="https://pocketyoga.com/pose/warrior_I_eagle_forward">warrior_I_eagle_forward</a>
+<a href="https://pocketyoga.com/pose/upward_dog">upward_dog</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_hands_on_hips">lunge_crescent_kneeling_hands_on_hips</a>
+<a href="https://pocketyoga.com/pose/bow_side">bow_side</a>
+<a href="https://pocketyoga.com/pose/headstand_supported_eagle">headstand_supported_eagle</a>
+<a href="https://pocketyoga.com/pose/pyramid_prayer">pyramid_prayer</a>
+<a href="https://pocketyoga.com/pose/toe_squat">toe_squat</a>
+<a href="https://pocketyoga.com/pose/warrior_I_cactus_arms">warrior_I_cactus_arms</a>
+<a href="https://pocketyoga.com/pose/headstand_tripod">headstand_tripod</a>
+<a href="https://pocketyoga.com/pose/plow">plow</a>
+<a href="https://pocketyoga.com/pose/supine_tortoise_bind">supine_tortoise_bind</a>
+<a href="https://pocketyoga.com/pose/mountain_arms_up">mountain_arms_up</a>
+<a href="https://pocketyoga.com/pose/scale_forward">scale_forward</a>
+<a href="https://pocketyoga.com/pose/downward_dog">downward_dog</a>
+<a href="https://pocketyoga.com/pose/handstand_lotus">handstand_lotus</a>
+<a href="https://pocketyoga.com/pose/visvamitra">visvamitra</a>
+<a href="https://pocketyoga.com/pose/boat_low">boat_low</a>
+<a href="https://pocketyoga.com/pose/tree_toppling">tree_toppling</a>
+<a href="https://pocketyoga.com/pose/lunge_prayer">lunge_prayer</a>
+<a href="https://pocketyoga.com/pose/scorpion">scorpion</a>
+<a href="https://pocketyoga.com/pose/gorilla">gorilla</a>
+<a href="https://pocketyoga.com/pose/chair_twist_extended">chair_twist_extended</a>
+<a href="https://pocketyoga.com/pose/dolphin">dolphin</a>
+<a href="https://pocketyoga.com/pose/bridge_leg_up">bridge_leg_up</a>
+<a href="https://pocketyoga.com/pose/gate">gate</a>
+<a href="https://pocketyoga.com/pose/plank_knee_to_elbow">plank_knee_to_elbow</a>
+<a href="https://pocketyoga.com/pose/grasshopper">grasshopper</a>
+<a href="https://pocketyoga.com/pose/headstand_supported_half_way">headstand_supported_half_way</a>
+<a href="https://pocketyoga.com/pose/seated_forward_bend">seated_forward_bend</a>
+<a href="https://pocketyoga.com/pose/garland">garland</a>
+<a href="https://pocketyoga.com/pose/plank_side_star">plank_side_star</a>
+<a href="https://pocketyoga.com/pose/wheel_leg_up">wheel_leg_up</a>
+<a href="https://pocketyoga.com/pose/plank_dolphin">plank_dolphin</a>
+<a href="https://pocketyoga.com/pose/forward_bend_deep">forward_bend_deep</a>
+<a href="https://pocketyoga.com/pose/half_moon_revolved">half_moon_revolved</a>
+<a href="https://pocketyoga.com/pose/camel">camel</a>
+<a href="https://pocketyoga.com/pose/lunge_bind">lunge_bind</a>
+<a href="https://pocketyoga.com/pose/warrior_II_forward">warrior_II_forward</a>
+<a href="https://pocketyoga.com/pose/side_lunge_extended_bound">side_lunge_extended_bound</a>
+<a href="https://pocketyoga.com/pose/bound_angle_II">bound_angle_II</a>
+<a href="https://pocketyoga.com/pose/table_leg_up">table_leg_up</a>
+<a href="https://pocketyoga.com/pose/scale">scale</a>
+<a href="https://pocketyoga.com/pose/triangle">triangle</a>
+<a href="https://pocketyoga.com/pose/seated_on_heels_hands_on_mat_opened_knees">seated_on_heels_hands_on_mat_opened_knees</a>
+<a href="https://pocketyoga.com/pose/figure_four_twist_extended">figure_four_twist_extended</a>
+<a href="https://pocketyoga.com/pose/boat_bind_outside_edge">boat_bind_outside_edge</a>
+<a href="https://pocketyoga.com/pose/headstand_tripod_spiral_legs">headstand_tripod_spiral_legs</a>
+<a href="https://pocketyoga.com/pose/visvamitra_kneeling">visvamitra_kneeling</a>
+<a href="https://pocketyoga.com/pose/wheel_head_down">wheel_head_down</a>
+<a href="https://pocketyoga.com/pose/feathered_peacock">feathered_peacock</a>
+<a href="https://pocketyoga.com/pose/tree_prayer">tree_prayer</a>
+<a href="https://pocketyoga.com/pose/splits_standing">splits_standing</a>
+<a href="https://pocketyoga.com/pose/box_neutral">box_neutral</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_twist_reverse">lunge_crescent_kneeling_twist_reverse</a>
+<a href="https://pocketyoga.com/pose/plank_dolphin_knee_to_elbow">plank_dolphin_knee_to_elbow</a>
+<a href="https://pocketyoga.com/pose/locust_half">locust_half</a>
+<a href="https://pocketyoga.com/pose/crow_flying">crow_flying</a>
+<a href="https://pocketyoga.com/pose/crooked_monkey">crooked_monkey</a>
+<a href="https://pocketyoga.com/pose/frog">frog</a>
+<a href="https://pocketyoga.com/pose/handstand_splits">handstand_splits</a>
+<a href="https://pocketyoga.com/pose/warrior_twist_extended_bound">warrior_twist_extended_bound</a>
+<a href="https://pocketyoga.com/pose/cat_balance">cat_balance</a>
+<a href="https://pocketyoga.com/pose/plank_kneeling_side">plank_kneeling_side</a>
+<a href="https://pocketyoga.com/pose/lotus_bound">lotus_bound</a>
+<a href="https://pocketyoga.com/pose/tree">tree</a>
+<a href="https://pocketyoga.com/pose/wide_legged_forward_bend_half_way">wide_legged_forward_bend_half_way</a>
+<a href="https://pocketyoga.com/pose/crane">crane</a>
+<a href="https://pocketyoga.com/pose/lunge_arm_up">lunge_arm_up</a>
+<a href="https://pocketyoga.com/pose/side_lunge_extended">side_lunge_extended</a>
+<a href="https://pocketyoga.com/pose/corpse_double_leg_raise">corpse_double_leg_raise</a>
+<a href="https://pocketyoga.com/pose/lunge_hands_on_mat">lunge_hands_on_mat</a>
+<a href="https://pocketyoga.com/pose/shoulderstand_unsupported">shoulderstand_unsupported</a>
+<a href="https://pocketyoga.com/pose/sphinx">sphinx</a>
+<a href="https://pocketyoga.com/pose/staff">staff</a>
+<a href="https://pocketyoga.com/pose/standing_hand_to_toe_full">standing_hand_to_toe_full</a>
+<a href="https://pocketyoga.com/pose/fire_log_forward">fire_log_forward</a>
+<a href="https://pocketyoga.com/pose/shoulderstand_lotus">shoulderstand_lotus</a>
+<a href="https://pocketyoga.com/pose/firefly">firefly</a>
+<a href="https://pocketyoga.com/pose/warrior_twist">warrior_twist</a>
+<a href="https://pocketyoga.com/pose/wild_thing">wild_thing</a>
+<a href="https://pocketyoga.com/pose/crow_side_extended">crow_side_extended</a>
+<a href="https://pocketyoga.com/pose/wide_legged_forward_bend_twist">wide_legged_forward_bend_twist</a>
+<a href="https://pocketyoga.com/pose/hero_reclining">hero_reclining</a>
+<a href="https://pocketyoga.com/pose/box_twist">box_twist</a>
+<a href="https://pocketyoga.com/pose/bound_angle">bound_angle</a>
+<a href="https://pocketyoga.com/pose/star">star</a>
+<a href="https://pocketyoga.com/pose/plank_upward">plank_upward</a>
+<a href="https://pocketyoga.com/pose/corpse_front">corpse_front</a>
+<a href="https://pocketyoga.com/pose/bow_preparation">bow_preparation</a>
+<a href="https://pocketyoga.com/pose/tortoise">tortoise</a>
+<a href="https://pocketyoga.com/pose/plank_side_tree">plank_side_tree</a>
+<a href="https://pocketyoga.com/pose/goddess">goddess</a>
+<a href="https://pocketyoga.com/pose/pyramid_arms_up_preparation">pyramid_arms_up_preparation</a>
+<a href="https://pocketyoga.com/pose/boat_half">boat_half</a>
+<a href="https://pocketyoga.com/pose/warrior_I_eagle_backbend">warrior_I_eagle_backbend</a>
+<a href="https://pocketyoga.com/pose/bow_half">bow_half</a>
+<a href="https://pocketyoga.com/pose/downward_dog_leg_up_kneeling">downward_dog_leg_up_kneeling</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling_prayer">lunge_kneeling_prayer</a>
+<a href="https://pocketyoga.com/pose/cat">cat</a>
+<a href="https://pocketyoga.com/pose/lotus_half">lotus_half</a>
+<a href="https://pocketyoga.com/pose/half_moon_revolved_bound">half_moon_revolved_bound</a>
+<a href="https://pocketyoga.com/pose/forward_bend_half_way">forward_bend_half_way</a>
+<a href="https://pocketyoga.com/pose/flying_lizard">flying_lizard</a>
+<a href="https://pocketyoga.com/pose/forward_bend">forward_bend</a>
+<a href="https://pocketyoga.com/pose/bow">bow</a>
+<a href="https://pocketyoga.com/pose/standing_hand_to_toe">standing_hand_to_toe</a>
+<a href="https://pocketyoga.com/pose/embryo">embryo</a>
+<a href="https://pocketyoga.com/pose/warrior_humble">warrior_humble</a>
+<a href="https://pocketyoga.com/pose/seated_on_heels_prayer">seated_on_heels_prayer</a>
+<a href="https://pocketyoga.com/pose/fallen_triangle">fallen_triangle</a>
+<a href="https://pocketyoga.com/pose/warrior_I_kneeling">warrior_I_kneeling</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_cactus_arms">lunge_crescent_kneeling_cactus_arms</a>
+<a href="https://pocketyoga.com/pose/dolphin_leg_up">dolphin_leg_up</a>
+<a href="https://pocketyoga.com/pose/corpse_neck_stretch">corpse_neck_stretch</a>
+<a href="https://pocketyoga.com/pose/easy_twist">easy_twist</a>
+<a href="https://pocketyoga.com/pose/standing_knee_to_chest">standing_knee_to_chest</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling_twist_extended_bound">lunge_kneeling_twist_extended_bound</a>
+<a href="https://pocketyoga.com/pose/pyramid_kneeling">pyramid_kneeling</a>
+<a href="https://pocketyoga.com/pose/figure_four_twist">figure_four_twist</a>
+<a href="https://pocketyoga.com/pose/pigeon_full">pigeon_full</a>
+<a href="https://pocketyoga.com/pose/bird_of_paradise_revolved_preparation">bird_of_paradise_revolved_preparation</a>
+<a href="https://pocketyoga.com/pose/chair_twist_bind">chair_twist_bind</a>
+<a href="https://pocketyoga.com/pose/upward_dog_neck_stretch">upward_dog_neck_stretch</a>
+<a href="https://pocketyoga.com/pose/lunge_hands_on_mat_flying">lunge_hands_on_mat_flying</a>
+<a href="https://pocketyoga.com/pose/box_hand_to_ankle">box_hand_to_ankle</a>
+<a href="https://pocketyoga.com/pose/downward_dog_knee_to_forehead_kneeling">downward_dog_knee_to_forehead_kneeling</a>
+<a href="https://pocketyoga.com/pose/seated_on_heels_prayer_twist">seated_on_heels_prayer_twist</a>
+<a href="https://pocketyoga.com/pose/bridge_preparation">bridge_preparation</a>
+<a href="https://pocketyoga.com/pose/wide_legged_forward_bend_I">wide_legged_forward_bend_I</a>
+<a href="https://pocketyoga.com/pose/corpse_extended">corpse_extended</a>
+<a href="https://pocketyoga.com/pose/warrior_I_forward">warrior_I_forward</a>
+<a href="https://pocketyoga.com/pose/toe_stand">toe_stand</a>
+<a href="https://pocketyoga.com/pose/warrior_III">warrior_III</a>
+<a href="https://pocketyoga.com/pose/wild_thing_forearm">wild_thing_forearm</a>
+<a href="https://pocketyoga.com/pose/lunge_arm_forward">lunge_arm_forward</a>
+<a href="https://pocketyoga.com/pose/lord_of_the_dance_revolved">lord_of_the_dance_revolved</a>
+<a href="https://pocketyoga.com/pose/headstand_tripod_knees_on_elbows">headstand_tripod_knees_on_elbows</a>
+<a href="https://pocketyoga.com/pose/warrior_humble_preparation">warrior_humble_preparation</a>
+<a href="https://pocketyoga.com/pose/supine_angle">supine_angle</a>
+<a href="https://pocketyoga.com/pose/table">table</a>
+<a href="https://pocketyoga.com/pose/chin_stand">chin_stand</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling">lunge_kneeling</a>
+<a href="https://pocketyoga.com/pose/triangle_forward">triangle_forward</a>
+<a href="https://pocketyoga.com/pose/lizard">lizard</a>
+<a href="https://pocketyoga.com/pose/shiva_squat">shiva_squat</a>
+<a href="https://pocketyoga.com/pose/hero">hero</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_cactus_arms">lunge_crescent_cactus_arms</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_eagle_backbend">lunge_crescent_eagle_backbend</a>
+<a href="https://pocketyoga.com/pose/hero_reclining_extended">hero_reclining_extended</a>
+<a href="https://pocketyoga.com/pose/triangle_revolved">triangle_revolved</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_eagle">lunge_crescent_kneeling_eagle</a>
+<a href="https://pocketyoga.com/pose/figure_four">figure_four</a>
+<a href="https://pocketyoga.com/pose/lotus_full">lotus_full</a>
+<a href="https://pocketyoga.com/pose/half_moon_bound">half_moon_bound</a>
+<a href="https://pocketyoga.com/pose/lunge">lunge</a>
+<a href="https://pocketyoga.com/pose/dolphin_on_toes">dolphin_on_toes</a>
+<a href="https://pocketyoga.com/pose/wheel">wheel</a>
+<a href="https://pocketyoga.com/pose/seated_forward_bend_wide_angle">seated_forward_bend_wide_angle</a>
+<a href="https://pocketyoga.com/pose/half_moon_revolved_bow">half_moon_revolved_bow</a>
+<a href="https://pocketyoga.com/pose/seated_forward_bend_preparation">seated_forward_bend_preparation</a>
+<a href="https://pocketyoga.com/pose/downward_dog_on_toes">downward_dog_on_toes</a>
+<a href="https://pocketyoga.com/pose/handstand_scorpion">handstand_scorpion</a>
+<a href="https://pocketyoga.com/pose/eagle">eagle</a>
+<a href="https://pocketyoga.com/pose/seated_forward_bend_three_limbs">seated_forward_bend_three_limbs</a>
+<a href="https://pocketyoga.com/pose/splits_standing_bent_knee">splits_standing_bent_knee</a>
+<a href="https://pocketyoga.com/pose/lotus_bound_forward">lotus_bound_forward</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_forward_arms_side">lunge_crescent_forward_arms_side</a>
+<a href="https://pocketyoga.com/pose/plank_leg_up">plank_leg_up</a>
+<a href="https://pocketyoga.com/pose/easy">easy</a>
+<a href="https://pocketyoga.com/pose/wind_removing_half">wind_removing_half</a>
+<a href="https://pocketyoga.com/pose/cobra_king">cobra_king</a>
+<a href="https://pocketyoga.com/pose/lotus_elevated">lotus_elevated</a>
+<a href="https://pocketyoga.com/pose/warrior_twist_extended">warrior_twist_extended</a>
+<a href="https://pocketyoga.com/pose/bridge">bridge</a>
+<a href="https://pocketyoga.com/pose/child_wide_side_lean">child_wide_side_lean</a>
+<a href="https://pocketyoga.com/pose/camel_easy">camel_easy</a>
+<a href="https://pocketyoga.com/pose/camel_preparation_hands_on_hips">camel_preparation_hands_on_hips</a>
+<a href="https://pocketyoga.com/pose/corpse">corpse</a>
+<a href="https://pocketyoga.com/pose/seated_cat">seated_cat</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_forward_bend">lunge_crescent_forward_bend</a>
+<a href="https://pocketyoga.com/pose/locust">locust</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling_arm_up">lunge_kneeling_arm_up</a>
+<a href="https://pocketyoga.com/pose/child_traditional">child_traditional</a>
+<a href="https://pocketyoga.com/pose/cat_balance_elbow_to_knee">cat_balance_elbow_to_knee</a>
+<a href="https://pocketyoga.com/pose/fish_preparation">fish_preparation</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling_hands_on_mat">lunge_kneeling_hands_on_mat</a>
+<a href="https://pocketyoga.com/pose/pyramid_preparation">pyramid_preparation</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_kneeling_hands_on_hips_forward_bend">lunge_crescent_kneeling_hands_on_hips_forward_bend</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_hands_on_hips">lunge_crescent_hands_on_hips</a>
+<a href="https://pocketyoga.com/pose/star_hands_interlaced">star_hands_interlaced</a>
+<a href="https://pocketyoga.com/pose/standing_forward_bend_half_lotus">standing_forward_bend_half_lotus</a>
+<a href="https://pocketyoga.com/pose/star_hands_on_hips">star_hands_on_hips</a>
+<a href="https://pocketyoga.com/pose/supine_spinal_twist">supine_spinal_twist</a>
+<a href="https://pocketyoga.com/pose/standing_marichi">standing_marichi</a>
+<a href="https://pocketyoga.com/pose/chair_twist">chair_twist</a>
+<a href="https://pocketyoga.com/pose/wide_legged_forward_bend_IV">wide_legged_forward_bend_IV</a>
+<a href="https://pocketyoga.com/pose/downward_dog_hand_to_ankle">downward_dog_hand_to_ankle</a>
+<a href="https://pocketyoga.com/pose/staff_inverted">staff_inverted</a>
+<a href="https://pocketyoga.com/pose/supine_bound_angle">supine_bound_angle</a>
+<a href="https://pocketyoga.com/pose/pigeon">pigeon</a>
+<a href="https://pocketyoga.com/pose/camel_preparation">camel_preparation</a>
+<a href="https://pocketyoga.com/pose/plank_leg_up_kneeling">plank_leg_up_kneeling</a>
+<a href="https://pocketyoga.com/pose/headstand_supported_preparation">headstand_supported_preparation</a>
+<a href="https://pocketyoga.com/pose/standing_head_to_knee">standing_head_to_knee</a>
+<a href="https://pocketyoga.com/pose/head_to_knee">head_to_knee</a>
+<a href="https://pocketyoga.com/pose/splits_wide">splits_wide</a>
+<a href="https://pocketyoga.com/pose/child">child</a>
+<a href="https://pocketyoga.com/pose/flamingo_humble">flamingo_humble</a>
+<a href="https://pocketyoga.com/pose/lunge_hands_on_mat_back">lunge_hands_on_mat_back</a>
+<a href="https://pocketyoga.com/pose/gate_reverse">gate_reverse</a>
+<a href="https://pocketyoga.com/pose/seated_forward_bend_wide_angle_II">seated_forward_bend_wide_angle_II</a>
+<a href="https://pocketyoga.com/pose/eight_point">eight_point</a>
+<a href="https://pocketyoga.com/pose/wheel_preparation">wheel_preparation</a>
+<a href="https://pocketyoga.com/pose/crow">crow</a>
+<a href="https://pocketyoga.com/pose/headstand_tripod_preparation">headstand_tripod_preparation</a>
+<a href="https://pocketyoga.com/pose/puppy_extended">puppy_extended</a>
+<a href="https://pocketyoga.com/pose/locust_full">locust_full</a>
+<a href="https://pocketyoga.com/pose/lift_up">lift_up</a>
+<a href="https://pocketyoga.com/pose/crow_side">crow_side</a>
+<a href="https://pocketyoga.com/pose/supine_tortoise">supine_tortoise</a>
+<a href="https://pocketyoga.com/pose/standing_half_lotus_bound">standing_half_lotus_bound</a>
+<a href="https://pocketyoga.com/pose/lunge_kneeling_twist">lunge_kneeling_twist</a>
+<a href="https://pocketyoga.com/pose/bound_angle_forward">bound_angle_forward</a>
+<a href="https://pocketyoga.com/pose/pyramid">pyramid</a>
+<a href="https://pocketyoga.com/pose/marichi_III_traditional">marichi_III_traditional</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_eagle">lunge_crescent_eagle</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_hands_on_hips_forward_bend">lunge_crescent_hands_on_hips_forward_bend</a>
+<a href="https://pocketyoga.com/pose/chair_prayer">chair_prayer</a>
+<a href="https://pocketyoga.com/pose/supine_pigeon">supine_pigeon</a>
+<a href="https://pocketyoga.com/pose/knee_pile_bind">knee_pile_bind</a>
+<a href="https://pocketyoga.com/pose/heron">heron</a>
+<a href="https://pocketyoga.com/pose/warrior_II_forward_arm_forward">warrior_II_forward_arm_forward</a>
+<a href="https://pocketyoga.com/pose/turtle">turtle</a>
+<a href="https://pocketyoga.com/pose/plank_dolphin_side">plank_dolphin_side</a>
+<a href="https://pocketyoga.com/pose/mountain_arms_side">mountain_arms_side</a>
+<a href="https://pocketyoga.com/pose/mountain_salute">mountain_salute</a>
+<a href="https://pocketyoga.com/pose/crooked_monkey_forearm">crooked_monkey_forearm</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_twist">lunge_crescent_twist</a>
+<a href="https://pocketyoga.com/pose/little_thunderbolt">little_thunderbolt</a>
+<a href="https://pocketyoga.com/pose/splits_standing_bound">splits_standing_bound</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_eagle_forward">lunge_crescent_eagle_forward</a>
+<a href="https://pocketyoga.com/pose/warrior_II_reverse">warrior_II_reverse</a>
+<a href="https://pocketyoga.com/pose/warrior_prayer">warrior_prayer</a>
+<a href="https://pocketyoga.com/pose/lunge_crescent_twist_reverse">lunge_crescent_twist_reverse</a>
+<a href="https://pocketyoga.com/pose/warrior_III_prayer">warrior_III_prayer</a>
+<a href="https://pocketyoga.com/pose/staff_inverted_leg_up">staff_inverted_leg_up</a>
+<a href="https://pocketyoga.com/pose/plank_side">plank_side</a>
+<a href="https://pocketyoga.com/pose/lunge_twist">lunge_twist</a>
+<a href="https://pocketyoga.com/pose/standing_hand_to_toe_revolved">standing_hand_to_toe_revolved</a>
+<a href="https://pocketyoga.com/pose/shoulderstand_supported">shoulderstand_supported</a>
+<a href="https://pocketyoga.com/pose/banana">banana</a>
+<a href="https://pocketyoga.com/pose/boat_full">boat_full</a>
+<a href="https://pocketyoga.com/pose/deaf_man">deaf_man</a>
+<a href="https://pocketyoga.com/pose/supine_hand_to_toe_full">supine_hand_to_toe_full</a>
+<a href="https://pocketyoga.com/pose/lord_of_the_dance">lord_of_the_dance</a>
+<a href="https://pocketyoga.com/pose/knee_pile">knee_pile</a>
+<a href="https://pocketyoga.com/pose/four_limbed_staff">four_limbed_staff</a>
+<a href="https://pocketyoga.com/pose/seated_cow">seated_cow</a>
+<a href="https://pocketyoga.com/pose/fire_log">fire_log</a>
+<a href="https://pocketyoga.com/pose/eight_angle">eight_angle</a>
+<a href="https://pocketyoga.com/pose/side_lunge">side_lunge</a>
+<a href="https://pocketyoga.com/pose/lunge_twist_extended_bound">lunge_twist_extended_bound</a>
+<a href="https://pocketyoga.com/pose/chair_side_twist">chair_side_twist</a>
 </body>
 </html>
